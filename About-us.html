@@ -21,26 +21,79 @@
             background-color: #f4f4f4;
         }
 
-        /* Banner */
-        .banner {
-            background: #6a6a72 url('BGB.jpg') repeat-x left;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            height: 25px
-            position: sticky;
-            top: 15px;
-            width: 100%;
-            z-index: 1000;
-        }
+/* Banner */
+.banner {
+    background: #5a5a5a;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
-        .banner img {
-            max-width: 250px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+/* Logo on the left (pops out slightly) */
+.banner .logo {
+    max-width: 300px; /* Adjust size as needed */
+    height: auto;
+    position: relative;
+    z-index: 2; /* Layer above buttons */
+    transform: translateY(10px); /* Makes it pop out */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    left: 10px;
+    Flex-wrap: wrap;
+}
+
+/* Container for image and buttons */
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* BGB Image - layered over buttons */
+.banner-content .bgb-image {
+    max-width: 130px; /* Similar to button height */
+    height: auto;
+    position: absolute;
+    right: 110px; /* Adjust based on layout */
+    z-index: 1; /* Layer above buttons */
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Buttons */
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 170px; /* Pushes buttons to the right of BGB image */
+    position: relative;
+    z-index: 1; /* Keeps buttons behind BGB */
+}
+
+.button-container button {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-container button:hover {
+    background-color: #536ad9;
+    transform: scale(1.05);
+}
+
 
         /* Hero Section */
         .hero {
@@ -57,30 +110,7 @@
             padding: 20px;
         }
 
-        /* Navigation Buttons */
-        .button-container {
-            margin: 20px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        button {
-            background-color:  rgb(196, 190, 255);;
-            color: rgb(0, 0, 0);
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.3em;
-            cursor: pointer;
-            margin: 10px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #536ad9;
-            transform: scale(1.05);
-        }
+  
 
         /* Photo Gallery */
         .photo-gallery {
@@ -202,7 +232,16 @@
 
     <!-- Header -->
     <header class="banner">
-        <img src="logo.jpg" alt="Lachenmayr Construction LLC">
+        <img src="logo.jpg" alt="Lachenmayr Construction LLC" class="logo">
+        <div class="banner-content">
+            <!--img src="BGB.jpg" alt="Side Image" class="bgb-image"-->
+            <nav class="button-container">
+                <button onclick="window.location.href='BuildwithLachenmayr.html';">Home</button>
+                <button onclick="window.location.href='services.html';">Services</button>
+                <button onclick="window.location.href='gallery.html';">Gallery</button>
+                <button onclick="window.location.href='contact.html';">Contact Us</button>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -212,20 +251,17 @@
 
     </div>
 
-    <!-- Navigation Buttons -->
-    <div class="button-container">
-        <button onclick="window.location.href='BuildwithLachenmayr.html';">Home</button>
-        <button onclick="window.location.href='services.html';">Services</button>
-        <button onclick="window.location.href='gallery.html';">Gallery</button>
-        <button onclick="window.location.href='contact.html';">Contact Us</button>
-    </div>
     <section class="about-us">
         <h1>About Us</h1>
-        <p>Founded in 1992, we bring over 30 years of experience and a deep-rooted passion for craftsmanship. Matt, alongside his wife Barb, comes from a long line of carpenters, carrying forward a legacy of skill and dedication. Over the years, Matt has mentored many apprentices who have gone on to excel in construction, while Barb has expertly managed the office, balancing her real estate expertise with her commitment to the business.</p>
-    
-        <p>Family is at the heart of everything we do. When they’re not working, you’ll find Matt and Barb enjoying time with their kids, caring for their beloved cats, or out boating on the Raritan Bay.</p>
-    
-        <p><strong>With generations of expertise and a commitment to excellence, we deliver <span class="highlight">master craftsmanship, high-quality work, and unmatched customer service.</span></strong></p>
+        <p>Founded in 1992, we’ve spent over 30 years building more than just homes—we’ve built a reputation. Matt and Barb run this company the way they do everything: with hard work, honesty, and pride.</p>
+
+        <p>Matt and Barb come from a long line of carpenters, carrying forward a legacy of skill and dedication. Matt has trained countless apprentices who’ve gone on to build careers of their own. Barb keeps everything running behind the scenes, balancing her real estate expertise with excellent customer service.</p>
+
+        <p>We don’t do cookie-cutter.</p>
+
+        <p>We build homes with character, strength, and heart—just like the families that live in them.</p>
+
+        <p>Generations of craftsmanship, zero shortcuts, and a commitment to doing things the right way. That’s who we are.</p>
     </section>
     
     <!-- Featured Services -->
